@@ -10,5 +10,19 @@
   <%= @author.birth_year %>
 </p>
 
+<p><strong>Books:</strong>
+  <% if @author.books.length > 0 %>
+    <ol>
+      <%- @author.books.order(:published_year).each do |book| %>
+        <li>
+          <%= book.title %> - <%= book.published_year %>
+        </li>
+      <%- end %>
+    </ol>
+  <% else %>
+    None
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
