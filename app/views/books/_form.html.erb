@@ -21,7 +21,7 @@
     <%= form.number_field :published_year %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :author_id, "Author" %>
     <%= form.collection_select :author_id, Author.all, :id, :name, include_blank: true %>
   </div>
